@@ -1,0 +1,9 @@
+publica se usa para cifrar y privada para descifrar
+
+ip de origen es lo más importante de protejer 
+
+mac: message autenticity code?? 
+
+
+
+apt-get update && apt-get install -y iputils-ping
