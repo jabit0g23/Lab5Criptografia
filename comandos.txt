@@ -4,6 +4,23 @@ ip de origen es lo más importante de protejer
 
 mac: message autenticity code?? 
 
-
+#####################################################
 
 apt-get update && apt-get install -y iputils-ping
+
+docker build -t c1_image ./C1
+docker build -t c2_image ./C2
+docker build -t c3_image ./C3
+docker build -t c4_image ./C4
+
+docker run -it --name c1 c1_image
+docker run -it --name c2 c2_image
+docker run -it --name c3 c3_image
+docker run -it --name c4 c4_image
+docker run -it --name s1 -p 2224:22 c4_image
+
+cat /etc/os-release
+
+useradd -m prueba && echo "prueba:prueba" | chpasswd
+mkdir -p /var/run/sshd
+service ssh restart
